@@ -98,9 +98,157 @@ const checkWinner = function(avgDolphins, avgKoalas){
    }
 }
 
-console.log(checkWinner(avgDolphins, avgKoalas));
+//console.log(checkWinner(avgDolphins, avgKoalas));
 
 const avgDolphins2 = calcAverage(85, 54, 41);
 const avgKoalas2 = calcAverage(23, 34, 27);
 
-console.log(checkWinner(avgDolphins2, avgKoalas2));
+//console.log(checkWinner(avgDolphins2, avgKoalas2));
+
+// Arrays
+
+const friends = ['Michael', 'Steven', 'Peter'];
+const newLength = friends.push('Jay');
+
+friends.unshift('JOhn');
+
+friends.pop();
+friends.pop();
+
+friends.shift();
+
+if (friends.includes('Steven')){
+   //console.log("You have a friend called Steven");
+}
+
+// Code Challenge 2
+
+/*const calcTip = billToCalc => {
+   return billToCalc >= 50 && billToCalc <= 300 ? billToCalc*.15 : billToCalc*.2;
+};
+
+const bills = [125, 555, 44];
+const tips = [];
+const total = [];
+
+for (let i = 0; i < bills.length; i++){
+   tips.push(calcTip(bills[i]));
+   total.push(bills[i] + tips[i])
+   //console.log(`The bill was ${bills[i]}, the tip was ${tips[i]}, and the total value was ${total[i]}`);
+}*/
+
+// Objects
+
+const Jack = {
+   firstName: 'Jack',
+   lastname: 'Patterson',
+   age: 19,
+   job: 'student',
+   friends: ['Ethan', 'Eric', 'Hyden', 'Michael']
+}
+
+/*const interestedIn = prompt('What do you want to know about Jack?');
+if (Jack[interestedIn]){
+   console.log(Jack[interestedIn]);
+}
+else {
+   console.log('Unknown Query.')
+}*/
+
+Jack.location = 'Ireland';
+Jack.twitter = '@DaJackPatterson';
+//console.log(Jack);
+
+// Object Challenge
+//console.log(`${Jack.firstName} has ${Jack.friends.length} friends, and his best friend is called ${Jack.friends[0]}.`);
+
+// Code Challenge 3
+
+const Mark = {
+   fullName: 'Mark Miller',
+   mass: 78,
+   height: 1.69,
+   calcBmi: () => {
+      return Mark.mass / Mark.height ** 2; 
+   }
+}
+
+const John = {
+   fullName: 'John Smith',
+   mass: 92,
+   height: 1.95,
+   calcBmi: () => {
+      return John.mass / John.height ** 2; 
+   }
+}
+
+Mark.bmi = Mark.calcBmi();
+John.bmi = John.calcBmi();
+
+if (Mark.bmi > John.bmi) {
+   //console.log(`${Mark.fullName}'s BMI (${Mark.bmi}) is higher than ${John.fullName}'s (${John.bmi})!`);
+}
+else if (John.bmi > Mark.bmi) {
+   //console.log(`${John.fullName}'s BMI (${John.bmi}) is higher than ${Mark.fullName}'s (${Mark.bmi})!`);
+}
+else {
+   //console.log("Both are either same or a valuer is invalid")
+}
+
+// Loops
+
+const JackArray = [
+   'Jack',
+   'Patterson',
+   19,
+   'student',
+   ['Ethan', 'Eric', 'Hyden', 'Michael']
+]
+const types = []
+
+for (let i = 0; i < JackArray.length; i++){
+   //console.log(JackArray[i], typeof(JackArray[i]));
+   types.push(typeof(JackArray[i]))
+}
+//console.log(types);
+
+let rep = 1;
+while (rep <= 10){
+   //console.log(`Test ${rep}`);
+   rep++;
+}
+
+let dice = Math.trunc(Math.random() * 6) + 1;
+
+while (dice !== 6){
+   //console.log(`You rolled a ${dice}`);
+   dice = Math.trunc(Math.random() * 6) + 1;
+   if (dice === 6){
+      //console.log('Loop is about to end.')
+   }
+}
+
+// Code Challenge 4
+const calcTip = billToCalc => {
+   return billToCalc >= 50 && billToCalc <= 300 ? billToCalc*.15 : billToCalc*.2;
+};
+
+const calcAverageTip = arr => {
+   let sum = 0;
+   for (let i = 0; i < arr.length; i++){
+      sum += arr[i];
+   }
+   return sum / arr.length;
+}
+
+const bills = [22,295,176,440,37,105,10,1100,86,52];
+const tips = [];
+const total = [];
+
+for (let i = 0; i < bills.length; i++){
+   tips.push(calcTip(bills[i]));
+   total.push(bills[i] + tips[i])
+   console.log(`The bill was ${bills[i]}, the tip was ${tips[i]}, and the total value was ${total[i]}`);
+}
+
+console.log(`The average of the total was ${calcAverageTip(total)}`);
